@@ -71,5 +71,23 @@ DoublyLinkedList.prototype.remove = function (val) {
   current.next = prev;
   console.log(node);
 };
+DoublyLinkedList.prototype.print = function () {
+  let output = "[";
+  let current = this.head;
+
+  while (current !== null) {
+    output += current.data;
+    if (current.next !== null) {
+      output += ",";
+    }
+  }
+
+  output += "]";
+  console.log(output);
+};
 
 const DL = new DoublyLinkedList();
+DL.append(5);
+DL.append(10);
+DL.append(15);
+DL.print();
